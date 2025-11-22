@@ -82,14 +82,25 @@ export const authOptions = {
       session.user.isApproved = token.isApproved
       return session
     },
-    async redirect({ url, baseUrl }: { url: string; baseUrl: string }) {
+    async redirect({ url, baseUrl, token }: { url: string; baseUrl: string; token?: any }) {
+      // Custom redirect based on user role
+      if (url === '/dashboard' || url === baseUrl + '/dashboard') {
+        if (token?.role === 'SUPER_ADMIN') {
+          return `${baseUrl}/dashboard/admin`
+        }
+        if (token?.role === 'CUSTOMER' || !token?.role) {
+          return `${baseUrl}/dashboard/customer`
+        }
+        // Add more role-based redirects as needed
+        return `${baseUrl}/dashboard/customer`
+      }
       if (url.startsWith('/')) {
         return `${baseUrl}${url}`
       }
       if (url.startsWith(baseUrl)) {
         return url
       }
-      return `${baseUrl}/dashboard`
+      return `${baseUrl}/dashboard/customer`
     }
   },
   secret: process.env.NEXTAUTH_SECRET

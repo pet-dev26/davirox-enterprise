@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import Card from '@/components/ui/Card'
 
 export default function DesignSystemPage() {
@@ -10,7 +10,7 @@ export default function DesignSystemPage() {
       <section>
         <h2 className="text-lg font-semibold">Buttons</h2>
         <div className="mt-4 flex gap-2">
-          <Button variant="primary">Primary</Button>
+          <Button variant="default">Default</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="outline">Outline</Button>
         </div>

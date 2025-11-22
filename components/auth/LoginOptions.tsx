@@ -3,7 +3,7 @@
 import { FormEvent, useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 
 interface LoginOptionsProps {
   callbackUrl: string

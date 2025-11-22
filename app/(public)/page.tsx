@@ -1,10 +1,15 @@
+import NavbarHero from '@/components/layout/Navbar'
 import React from 'react'
 
 export default function HomePage() {
   return (
     <main className="p-8">
-      <h1 className="text-3xl font-bold">Welcome to DeviroxN Enterprise</h1>
-      <p className="mt-4">Public landing page for Finance, Marketplace, and Real Estate domains.</p>
+    <div className="max-w-3xl mt-12 text-center mx-auto">
+        <h1 className="text-4xl font-bold mb-4">Welcome to DeviroxN Enterprise</h1>
+        <p className="text-lg text-gray-700">
+          This is the enterprise app scaffold for Finance, Marketplace, and Real Estate applications.
+        </p>
+      </div>
     </main>
   )
 }

@@ -5,7 +5,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 // require the component at runtime to avoid Jest parsing TSX files with unexpected token in some environments
-const Button = require('../Button').default
+const Button = require('../button').Button
 
 test('renders button with children', () => {
   // avoid JSX in test file to bypass transform edge-cases

@@ -1,5 +1,8 @@
 import './globals.css'
 import React from 'react'
+import FooterComplex from '../src/components/smoothui/footer-2'
+import { HeroHeader } from '../src/components/smoothui/shared/hero-header'
+import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata = {
   title: 'DeviroxN Enterprise',
@@ -8,10 +11,24 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+   <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <HeroHeader />
+            {children}
+
+            <FooterComplex />
+
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   )
 }

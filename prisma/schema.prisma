@@ -156,3 +156,12 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+// Contact messages from site visitors
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
